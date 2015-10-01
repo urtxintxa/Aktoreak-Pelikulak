@@ -39,6 +39,7 @@ public class Nagusia {
 			
 			while(sc.hasNext()) {
 				lerroa = sc.nextLine();
+				// zerrenda.split("\\s* ### \\s*");
 			}
 			
 			sc.close();
