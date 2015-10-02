@@ -3,14 +3,43 @@ package org.minakdev.aktoreak;
 public class Aktoreak {
 
 	private static Aktoreak nireAktoreak;
+	private AktoreZerrenda aktoreZerrenda = new AktoreZerrenda();
 
 	private Aktoreak() {
 	}
 
-	public static Aktoreak getInstance() {
+	public static Aktoreak getNireAktoreak() {
 		if (nireAktoreak == null) {
 			nireAktoreak = new Aktoreak();
 		}
 		return nireAktoreak;
+	}
+	
+	public AktoreZerrenda getAktoreZerrenda() {
+		return this.aktoreZerrenda;
+	}
+	
+	public void sortuAktorea(String pAktoreaPelikulak) {
+		String [] atalak = pAktoreaPelikulak.split("\\s*###\\s*");
+		
+		Aktorea aktoreBerria = new Aktorea(atalak[0]);
+		
+		for (int i = 1; i < atalak.length; i++) {
+			aktoreBerria.sartuPelikula(atalak[i]);
+		}
+		
+		aktoreZerrenda.getZerrenda().add(aktoreBerria);
+	}
+	
+	public void aktoreaTxertatu(Aktorea pAktorea) {
+		aktoreZerrenda.aktoreaTxertatu(pAktorea);
+	}
+	
+	public void aktoreaBilatu () {
+		
+	}
+	
+	public void aktoreakOrdenatu() {
+		
 	}
 }

@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Nagusia {
@@ -27,6 +28,14 @@ public class Nagusia {
 		nireNagusia = Nagusia.getNireNagusia();
 		
 		nireNagusia.fitxategiaKargatu(fitxategia);
+		
+		try {
+			nireNagusia.aktoreenZerrendaGorde();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private void fitxategiaKargatu(String pFitxategia) {
@@ -35,11 +44,11 @@ public class Nagusia {
 			
 			Scanner sc = new Scanner(new FileReader(pFitxategia));
 			
-			String lerroa;
+			String aktoreaPelikulak;
 			
 			while(sc.hasNext()) {
-				lerroa = sc.nextLine();
-				// zerrenda.split("\\s* ### \\s*");
+				aktoreaPelikulak = sc.nextLine();
+				Aktoreak.getNireAktoreak().sortuAktorea(aktoreaPelikulak);
 			}
 			
 			sc.close();
@@ -49,9 +58,31 @@ public class Nagusia {
 		}
 	}
 	
-	private void fitxategiaIdatzi() throws FileNotFoundException, UnsupportedEncodingException {
-		PrintWriter idatzi = new PrintWriter("irteera.txt", "UTF-8;");
+	private void aktoreenZerrendaGorde() throws FileNotFoundException, UnsupportedEncodingException {		
+		PrintWriter idatzi = new PrintWriter("AktoreakOutput.txt", "UTF-8");
+		
+		Iterator<Aktorea> itr =  Aktoreak.getNireAktoreak().getAktoreZerrenda().getZerrenda().iterator();
+		
+		while(itr.hasNext()) {
+			idatzi.println(itr.next().getIzena());
+		}
+		
 		idatzi.close();
+	}
+	
+	public void aktoreBatenPelikulakBueltatu() {
+		
+	}
+	
+	public void pelikulaBatekoAktoreakBueltatu() {
+		
+	}
+	
+	public void diruaGehitu() {
+		
+	}
+	
+	public void aktoreBatenEzabaketa() {
 		
 	}
 
