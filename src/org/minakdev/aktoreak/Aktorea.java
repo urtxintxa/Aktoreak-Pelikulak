@@ -21,4 +21,9 @@ public class Aktorea {
 	public void pelikulakBueltatu() {
 		
 	}
+
+	public void pelikuletatikEzabatu() {
+		this.pelikulaZerrenda.aktoreaEzabatu(this);
+		
+	}
 }

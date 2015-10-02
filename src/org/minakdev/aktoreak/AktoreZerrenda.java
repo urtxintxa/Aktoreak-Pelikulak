@@ -26,4 +26,8 @@ public class AktoreZerrenda {
 	public void aktoreakOrdenatu() {
 		
 	}
+
+	public void aktoreaEzabatu(Aktorea aktorea) {
+		this.aktoreZerrenda.remove(aktorea);		
+	}
 }

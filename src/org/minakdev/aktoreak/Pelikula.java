@@ -22,8 +22,8 @@ public class Pelikula {
 		
 	}
 	
-	public void aktoreaEzabatu() {
-		
+	public void aktoreaEzabatu(Aktorea aktorea) {
+		this.aktoreZerrenda.aktoreaEzabatu(aktorea);
 	}
 	
 }

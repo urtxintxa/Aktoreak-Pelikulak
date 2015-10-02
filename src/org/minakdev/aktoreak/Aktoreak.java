@@ -35,11 +35,23 @@ public class Aktoreak {
 		aktoreZerrenda.aktoreaTxertatu(pAktorea);
 	}
 	
-	public void aktoreaBilatu () {
+	public Aktorea aktoreaBilatu (String izena) {
 		
 	}
 	
 	public void aktoreakOrdenatu() {
+		
+	}
+	
+	public void aktoreaEzabatu(String izena){
+		Aktorea aktorea=this.aktoreaBilatu(izena);
+		if (aktorea==null){
+			System.out.println("Ezin da aktorea ezabatu ez baitago.");
+		}
+		else{
+			aktorea.pelikuletatikEzabatu();
+			aktoreZerrenda.aktoreaEzabatu(aktorea);
+		}
 		
 	}
 }
