@@ -3,9 +3,10 @@ package org.minakdev.aktoreak;
 public class Aktoreak {
 
 	private static Aktoreak nireAktoreak;
-	private AktoreZerrenda aktoreZerrenda = new AktoreZerrenda();
+	private AktoreZerrenda aktoreZerrenda;
 
 	private Aktoreak() {
+		aktoreZerrenda = new AktoreZerrenda();
 	}
 
 	public static Aktoreak getNireAktoreak() {
@@ -30,10 +31,10 @@ public class Aktoreak {
 			aktoreBerria.sartuPelikula(pelikula);
 		}
 		
-		aktoreZerrenda.getZerrenda().add(aktoreBerria);
+		aktoreZerrenda.aktoreaTxertatu(aktoreBerria);
 	}
 	
-	public void aktoreaTxertatu(Aktorea pAktorea) {
+	public void aktoreaSartu(Aktorea pAktorea) {
 		aktoreZerrenda.aktoreaTxertatu(pAktorea);
 	}
 	
