@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -79,11 +80,63 @@ public class Nagusia {
 	}
 	
 	public void diruaGehitu() {
+		System.out.println("Sartu pelikularen izena");
+		String pelIzen=this.stringEskatu();
+		Pelikula peli= Pelikulak.getNirePelikulak().pelikulaBilatu(pelIzen);
+		if(peli==null){
+			System.out.println("Pelikula hori ez dago. Ezin da dirurik gehitu.");
+		}
+		else{
+			float n=this.diruaEskatu();
+			peli.diruaGehitu(n);
+		}	
 		
 	}
 	
 	public void aktoreBatenEzabaketa() {
 		
+	}
+	
+	private float diruaEskatu(){
+		Scanner sc=new Scanner(System.in);
+		float n;
+		
+		boolean ezAmaitu = true;
+		
+		do {
+			try {
+				System.out.println("Sartu diru kantitate bat: ");
+				n = sc.nextFloat();
+				ezAmaitu=false;
+			} catch (InputMismatchException e) {
+				sc.nextLine();
+				n = 0;
+				System.out.println("Sartu duzuna ez da diru kantitate bat.");
+			} 
+		}while (ezAmaitu);
+		sc.close();
+		return n;
+	}
+	
+	private String stringEskatu(){
+		Scanner sc=new Scanner(System.in);
+		
+		String izena = sc.nextLine();
+		sc.close();
+		return izena;
+		
+	}
+	
+	public void aktoreaTxertatu(){
+		String izena=this.stringEskatu();
+		Aktorea aktor= Aktoreak.getNireAktoreak().aktoreaBilatu(izena);
+		if(aktor==null){
+			Aktoreak.getNireAktoreak().aktoreaTxertatu(new Aktorea(izena));
+			Aktoreak.getNireAktoreak().aktoreakOrdenatu();
+		}
+		else{
+			System.out.println("Ezin da aktorea gehitu, izen bereko pertsona bat baitago.");
+		}
 	}
 
 }

@@ -3,7 +3,7 @@ package org.minakdev.aktoreak;
 public class Pelikula {
 	
 	private String izena;
-	private int dirua;
+	private float dirua;
 	private AktoreZerrenda aktoreZerrenda;
 	
 	public Pelikula(String pIzena) {
@@ -14,7 +14,7 @@ public class Pelikula {
 		return this.izena;
 	}
 	
-	public void setDirua(int pDirua) {
+	public void setDirua(float pDirua) {
 		this.dirua = pDirua;
 	}
 
@@ -26,4 +26,7 @@ public class Pelikula {
 		this.aktoreZerrenda.aktoreaEzabatu(aktorea);
 	}
 	
+	public void diruaGehitu(float diru){
+		this.dirua=this.dirua+diru;
+	}
 }

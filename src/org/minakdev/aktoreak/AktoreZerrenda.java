@@ -11,7 +11,6 @@ public class AktoreZerrenda {
 	}
 	
 	public void aktoreaTxertatu(Aktorea pAktorea) {
-		System.out.println("lol");
 		aktoreZerrenda.add(pAktorea);
 	}
 	
