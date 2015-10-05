@@ -22,4 +22,8 @@ public class Pelikulak {
 	public void pelikulaBilatu() {
 		
 	}
+	
+	public Pelikula pelikulaBueltatu(String izena){
+		return this.pelikulaZerrenda.pelikulaBueltatu(izena);
+	}
 }

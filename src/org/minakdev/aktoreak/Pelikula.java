@@ -10,7 +10,11 @@ public class Pelikula {
 		this.izena = pIzena;
 	}
 	
-	public String getDirua() {
+	public float getDirua() {
+		return this.dirua;
+	}
+	
+	public String getIzena() {
 		return this.izena;
 	}
 	

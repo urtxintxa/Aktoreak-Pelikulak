@@ -25,4 +25,17 @@ public class PelikulaZerrenda {
 	private Iterator<Pelikula> getIteradorea(){
 		return this.pelikulaZerrenda.iterator();
 	}
+	
+	public Pelikula pelikulaBueltatu(String izena){
+		Iterator<Pelikula> itr = this.getIteradorea();
+		Pelikula peli = null;
+		Pelikula momentPeli = null;
+		while (itr.hasNext() && peli == null){
+			momentPeli = itr.next();
+			if( momentPeli.getIzena().equals(izena)){
+				peli = momentPeli;
+			}
+		}
+		return peli;
+	}
 }
