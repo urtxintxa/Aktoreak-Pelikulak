@@ -25,7 +25,9 @@ public class Aktoreak {
 		Aktorea aktoreBerria = new Aktorea(atalak[0]);
 		
 		for (int i = 1; i < atalak.length; i++) {
-			aktoreBerria.sartuPelikula(atalak[i]);
+			Pelikula pelikula = new Pelikula(atalak[i]);
+			Pelikulak.getNirePelikulak().sartuPelikula(pelikula);
+			aktoreBerria.sartuPelikula(pelikula);
 		}
 		
 		aktoreZerrenda.getZerrenda().add(aktoreBerria);

@@ -13,9 +13,8 @@ public class Aktorea {
 		return this.izena;
 	}
 	
-	public void sartuPelikula(String pIzena) {
-		Pelikula pelikula = new Pelikula(pIzena);
-		pelikulaZerrenda.sartuPelikula(pelikula);
+	public void sartuPelikula(Pelikula pPelikula) {
+		pelikulaZerrenda.sartuPelikula(pPelikula);
 	}
 	
 	public void pelikulakBueltatu() {

@@ -15,8 +15,8 @@ public class Pelikulak {
 		return nirePelikulak;
 	}
 	
-	public void sartuPelikula() {
-		
+	public void sartuPelikula(Pelikula pPelikula) {
+		pelikulaZerrenda.sartuPelikula(pPelikula);
 	}
 	
 	public void pelikulaBilatu() {
