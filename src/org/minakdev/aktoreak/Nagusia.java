@@ -9,11 +9,15 @@ import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.Scanner;
 
+import TartetikKanpoException.TartetikKanpoException;
+
 public class Nagusia {
 	
 	private static Nagusia nireNagusia;
 	
 	private static String fitxategia = "aktore-zerrenda.txt";
+	
+	private static Scanner sc = new Scanner(System.in);
 
 	private Nagusia() {
 	}
@@ -30,13 +34,47 @@ public class Nagusia {
 		
 		nireNagusia.fitxategiaKargatu(fitxategia);
 		
-		try {
+		/*try {
 			nireNagusia.aktoreenZerrendaGorde();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
-		}
+		} */
+		
+		System.out.println("AKOTEAK ETA PELIKULAK KUDEATZEKO APLIKAZIOA");
+		System.out.println("Aplikazioa honek aukera hauek ditu:");
+		
+		System.out.println("1 - Aktore bat bilatu");
+		System.out.println("2 - Aktore berri bat txertatu");
+		System.out.println("3 - Aktore baten pelikulak ikusi");
+		System.out.println("4 - Pelikula baten aktoreak ikusi");
+		System.out.println("5 - Pelikula batek lortutako dirua ezarri");
+		System.out.println("6 - Aktore bat ezabatu");
+		System.out.println("7 - Aktoreen zerrenda gorde");
+		
+		System.out.println();
+		
+		int aukera = 0;
+		boolean ezAmaitu = true;
+		
+		do {
+			try {
+				System.out.println("Hautatu nahi duzun aukera: ");
+				aukera = sc.nextInt();	
+				if(aukera > 7 || aukera < 1){
+					throw new TartetikKanpoException("Zenbaki okerra hautatu duzu.");
+				}
+				ezAmaitu = false;
+			} catch (InputMismatchException  e) {
+				sc.nextLine();
+				aukera = 0;
+				System.out.println("Zenbaki okerra hautatu duzu.");
+			} catch (TartetikKanpoException e) {
+				System.out.println(e.getMessage());
+			}
+		} while (ezAmaitu);
+		
 	}
 	
 	private void fitxategiaKargatu(String pFitxategia) {
@@ -98,7 +136,6 @@ public class Nagusia {
 	}
 	
 	private float diruaEskatu(){
-		Scanner sc=new Scanner(System.in);
 		float n;
 		
 		boolean ezAmaitu = true;
@@ -114,7 +151,7 @@ public class Nagusia {
 				System.out.println("Sartu duzuna ez da diru kantitate bat.");
 			} 
 		}while (ezAmaitu);
-		sc.close();
+		
 		return n;
 	}
 	
