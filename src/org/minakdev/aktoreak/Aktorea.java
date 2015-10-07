@@ -25,7 +25,11 @@ public class Aktorea {
 	}
 	
 	public void pelikulakBueltatu() {
-		
+		System.out.println("Pelikulak:");
+		Iterator<Pelikula> itr = this.getIteradorea();
+		while (itr.hasNext()) {
+			System.out.println(itr.next().getIzena());
+		}
 	}
 
 	public void pelikuletatikEzabatu() {
