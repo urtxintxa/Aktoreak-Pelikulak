@@ -1,5 +1,7 @@
 package org.minakdev.aktoreak;
 
+import java.util.ArrayList;
+
 public class Aktoreak {
 
 	private static Aktoreak nireAktoreak;
@@ -16,8 +18,8 @@ public class Aktoreak {
 		return nireAktoreak;
 	}
 	
-	public AktoreZerrenda getAktoreZerrenda() {
-		return this.aktoreZerrenda;
+	public ArrayList<Aktorea> getAktoreZerrenda() {
+		return this.aktoreZerrenda.getZerrenda();
 	}
 	
 	public void sortuAktorea(String pAktoreaPelikulak) {
@@ -26,10 +28,19 @@ public class Aktoreak {
 		Aktorea aktoreBerria = new Aktorea(atalak[0]);
 		
 		for (int i = 1; i < atalak.length; i++) {
-			Pelikula pelikula = new Pelikula(atalak[i]);
-			Pelikulak.getNirePelikulak().sartuPelikula(pelikula);
+			String pelikulaIzena = atalak[i];
+			Pelikula pelikula;
+			
+			if(Pelikulak.getNirePelikulak().pelikulaBueltatu(pelikulaIzena) == null) {
+				pelikula = new Pelikula(pelikulaIzena);
+				Pelikulak.getNirePelikulak().sartuPelikula(pelikula);
+			}
+			else {
+				pelikula = Pelikulak.getNirePelikulak().pelikulaBueltatu(pelikulaIzena);
+			}
+			
 			aktoreBerria.sartuPelikula(pelikula);
-			Pelikulak.getNirePelikulak().pelikulaBueltatu(atalak[i]).sartuAktorea(aktoreBerria);
+			pelikula.sartuAktorea(aktoreBerria);
 		}
 		
 		aktoreZerrenda.aktoreaTxertatu(aktoreBerria);

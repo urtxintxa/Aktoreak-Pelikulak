@@ -100,7 +100,7 @@ public class Nagusia {
 	private void aktoreenZerrendaGorde() throws FileNotFoundException, UnsupportedEncodingException {		
 		PrintWriter idatzi = new PrintWriter("AktoreakOutput.txt", "UTF-8");
 		
-		Iterator<Aktorea> itr =  Aktoreak.getNireAktoreak().getAktoreZerrenda().getZerrenda().iterator();
+		Iterator<Aktorea> itr =  Aktoreak.getNireAktoreak().getAktoreZerrenda().iterator();
 		
 		while(itr.hasNext()) {
 			Aktorea egungoAktorea = itr.next();
@@ -110,8 +110,8 @@ public class Nagusia {
 			while (itr2.hasNext()) {
 				Pelikula egungoPelikula = itr2.next();
 				idatzi.print(" ### "+egungoPelikula.getIzena());
-				
 			}
+			idatzi.println();
 		}
 		
 		idatzi.close();
