@@ -8,6 +8,7 @@ public class Pelikula {
 	
 	public Pelikula(String pIzena) {
 		this.izena = pIzena;
+		this.aktoreZerrenda = new AktoreZerrenda();
 	}
 	
 	public float getDirua() {

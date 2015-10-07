@@ -4,8 +4,11 @@ import java.util.ArrayList;
 
 public class AktoreZerrenda {
 
-	private ArrayList<Aktorea> aktoreZerrenda = new ArrayList<>();
+	private ArrayList<Aktorea> aktoreZerrenda;
 
+	public AktoreZerrenda(){
+		this.aktoreZerrenda = new ArrayList<Aktorea>();
+	}
 	public ArrayList<Aktorea> getZerrenda() {
 		return aktoreZerrenda;
 	}
