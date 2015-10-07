@@ -24,12 +24,8 @@ public class Aktorea {
 		pelikulaZerrenda.sartuPelikula(pPelikula);
 	}
 	
-	public void pelikulakBueltatu() {
-		System.out.println("Pelikulak:");
-		Iterator<Pelikula> itr = this.getIteradorea();
-		while (itr.hasNext()) {
-			System.out.println(itr.next().getIzena());
-		}
+	public PelikulaZerrenda pelikulakBueltatu() {
+		return this.pelikulaZerrenda;
 	}
 
 	public void pelikuletatikEzabatu() {

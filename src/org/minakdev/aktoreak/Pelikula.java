@@ -27,8 +27,8 @@ public class Pelikula {
 		aktoreZerrenda.aktoreaTxertatu(pAktorea);
 	}
 
-	public void aktoreakBueltatu() {
-		
+	public AktoreZerrenda aktoreakBueltatu() {
+		return this.aktoreZerrenda
 	}
 	
 	public void aktoreaEzabatu(Aktorea aktorea) {
