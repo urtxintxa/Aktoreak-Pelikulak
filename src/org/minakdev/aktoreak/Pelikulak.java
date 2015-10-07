@@ -6,6 +6,7 @@ public class Pelikulak {
 	private PelikulaZerrenda pelikulaZerrenda;
 	
 	private Pelikulak() {
+		this.pelikulaZerrenda = new PelikulaZerrenda();
 	}
 
 	public static Pelikulak getNirePelikulak() {

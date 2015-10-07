@@ -5,8 +5,12 @@ import java.util.Iterator;
 
 public class PelikulaZerrenda {
 	
-	private ArrayList<Pelikula> pelikulaZerrenda = new ArrayList<>();
+	private ArrayList<Pelikula> pelikulaZerrenda;
 
+	public PelikulaZerrenda(){
+		this.pelikulaZerrenda = new ArrayList<Pelikula>(); 
+	}
+	
 	public void aktoreaEzabatu(Aktorea aktorea) {
 		Iterator<Pelikula> itr=this.getIteradorea();
 		while(itr.hasNext()){
