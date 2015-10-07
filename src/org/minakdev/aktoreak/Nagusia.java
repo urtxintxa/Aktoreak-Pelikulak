@@ -34,46 +34,74 @@ public class Nagusia {
 		
 		nireNagusia.fitxategiaKargatu(fitxategia);
 		
-		/*try {
-			nireNagusia.aktoreenZerrendaGorde();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		} */
+		
 		
 		System.out.println("AKOTEAK ETA PELIKULAK KUDEATZEKO APLIKAZIOA");
 		System.out.println("Aplikazioa honek aukera hauek ditu:");
-		
-		System.out.println("1 - Aktore bat bilatu");
-		System.out.println("2 - Aktore berri bat txertatu");
-		System.out.println("3 - Aktore baten pelikulak ikusi");
-		System.out.println("4 - Pelikula baten aktoreak ikusi");
-		System.out.println("5 - Pelikula batek lortutako dirua ezarri");
-		System.out.println("6 - Aktore bat ezabatu");
-		System.out.println("7 - Aktoreen zerrenda gorde");
-		
-		System.out.println();
-		
-		int aukera = 0;
-		boolean ezAmaitu = true;
-		
-		do {
-			try {
-				System.out.println("Hautatu nahi duzun aukera: ");
-				aukera = sc.nextInt();	
-				if(aukera > 7 || aukera < 1){
-					throw new TartetikKanpoException("Zenbaki okerra hautatu duzu.");
+		do{
+			System.out.println("1 - Aktore bat bilatu");
+			System.out.println("2 - Aktore berri bat txertatu");
+			System.out.println("3 - Aktore baten pelikulak ikusi");
+			System.out.println("4 - Pelikula baten aktoreak ikusi");
+			System.out.println("5 - Pelikula batek lortutako dirua ezarri");
+			System.out.println("6 - Aktore bat ezabatu");
+			System.out.println("7 - Aktoreen zerrenda gorde");
+			System.out.println("8 - Irten");
+			
+			System.out.println();
+			
+			int aukera = 0;
+			boolean ezAmaitu = true;
+			
+			do {
+				try {
+					System.out.println("Hautatu nahi duzun aukera: ");
+					aukera = sc.nextInt();	
+					if(aukera > 8 || aukera < 1){
+						throw new TartetikKanpoException("Zenbaki okerra hautatu duzu.");
+					}
+					ezAmaitu = false;
+				} catch (InputMismatchException  e) {
+					sc.nextLine();
+					aukera = 0;
+					System.out.println("Zenbaki okerra hautatu duzu.");
+				} catch (TartetikKanpoException e) {
+					System.out.println(e.getMessage());
 				}
-				ezAmaitu = false;
-			} catch (InputMismatchException  e) {
-				sc.nextLine();
-				aukera = 0;
-				System.out.println("Zenbaki okerra hautatu duzu.");
-			} catch (TartetikKanpoException e) {
-				System.out.println(e.getMessage());
+			} while (ezAmaitu);
+			
+			if (aukera == 1){
+				nireNagusia.aktoreaBilatu();
 			}
-		} while (ezAmaitu);
+			else if(aukera == 2){
+				nireNagusia.aktoreaTxertatu();
+			}
+			else if(aukera == 3){
+				nireNagusia.aktoreBatenPelikulakBueltatu();
+			}
+			else if(aukera == 4){
+				nireNagusia.pelikulaBatekoAktoreakBueltatu();
+			}
+			else if(aukera == 5){
+				nireNagusia.diruaGehitu();
+			}
+			else if(aukera == 6){
+				nireNagusia.aktoreBatenEzabaketa();
+			}
+			else if(aukera == 7){
+				try {
+					nireNagusia.aktoreenZerrendaGorde();
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				} catch (UnsupportedEncodingException e) {
+					e.printStackTrace();
+				} 
+			}
+			else if(aukera == 8){
+				System.exit(0);
+			}
+		}while(true);
+		
 		
 	}
 	
@@ -182,6 +210,10 @@ public class Nagusia {
 		else{
 			System.out.println("Ezin da aktorea gehitu, izen bereko pertsona bat baitago.");
 		}
+	}
+	
+	private Aktorea aktoreaBilatu(){
+		
 	}
 
 }
