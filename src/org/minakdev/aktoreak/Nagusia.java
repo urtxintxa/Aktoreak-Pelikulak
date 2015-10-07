@@ -123,6 +123,7 @@ public class Nagusia {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		Aktoreak.getNireAktoreak().aktoreakOrdenatu();
 	}
 	
 	private void aktoreenZerrendaGorde() throws FileNotFoundException, UnsupportedEncodingException {		
