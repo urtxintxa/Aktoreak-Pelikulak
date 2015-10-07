@@ -111,7 +111,7 @@ public class Nagusia {
 				Pelikula egungoPelikula = itr2.next();
 				idatzi.print(" ### "+egungoPelikula.getIzena());
 			}
-			idatzi.println();
+			idatzi.print("\n");
 		}
 		
 		idatzi.close();
