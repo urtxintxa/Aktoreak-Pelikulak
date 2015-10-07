@@ -20,10 +20,6 @@ public class Pelikulak {
 		pelikulaZerrenda.sartuPelikula(pPelikula);
 	}
 	
-	public void pelikulaBilatu() {
-		
-	}
-	
 	public Pelikula pelikulaBueltatu(String izena){
 		return this.pelikulaZerrenda.pelikulaBueltatu(izena);
 	}
