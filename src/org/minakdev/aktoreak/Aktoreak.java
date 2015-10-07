@@ -29,6 +29,7 @@ public class Aktoreak {
 			Pelikula pelikula = new Pelikula(atalak[i]);
 			Pelikulak.getNirePelikulak().sartuPelikula(pelikula);
 			aktoreBerria.sartuPelikula(pelikula);
+			Pelikulak.getNirePelikulak().pelikulaBueltatu(atalak[i]).sartuAktorea(aktoreBerria);
 		}
 		
 		aktoreZerrenda.aktoreaTxertatu(aktoreBerria);

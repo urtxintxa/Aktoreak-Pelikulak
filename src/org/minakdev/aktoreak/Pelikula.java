@@ -21,6 +21,10 @@ public class Pelikula {
 	public void setDirua(float pDirua) {
 		this.dirua = pDirua;
 	}
+	
+	public void sartuAktorea(Aktorea pAktorea) {
+		aktoreZerrenda.aktoreaTxertatu(pAktorea);
+	}
 
 	public void aktoreakBueltatu() {
 		

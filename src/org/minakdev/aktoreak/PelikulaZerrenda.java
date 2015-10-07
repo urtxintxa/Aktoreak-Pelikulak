@@ -22,7 +22,7 @@ public class PelikulaZerrenda {
 		pelikulaZerrenda.add(pPelikula);
 	}
 	
-	private Iterator<Pelikula> getIteradorea(){
+	public Iterator<Pelikula> getIteradorea(){
 		return this.pelikulaZerrenda.iterator();
 	}
 	

@@ -103,7 +103,15 @@ public class Nagusia {
 		Iterator<Aktorea> itr =  Aktoreak.getNireAktoreak().getAktoreZerrenda().getZerrenda().iterator();
 		
 		while(itr.hasNext()) {
-			idatzi.println(itr.next().getIzena());
+			Aktorea egungoAktorea = itr.next();
+			idatzi.print(egungoAktorea.getIzena());
+			
+			Iterator<Pelikula> itr2 = egungoAktorea.getIteradorea();
+			while (itr2.hasNext()) {
+				Pelikula egungoPelikula = itr2.next();
+				idatzi.print(" ### "+egungoPelikula.getIzena());
+				
+			}
 		}
 		
 		idatzi.close();

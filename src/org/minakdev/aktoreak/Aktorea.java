@@ -1,16 +1,23 @@
 package org.minakdev.aktoreak;
 
+import java.util.Iterator;
+
 public class Aktorea {
 	
 	private String izena;
-	private PelikulaZerrenda pelikulaZerrenda = new PelikulaZerrenda();
+	private PelikulaZerrenda pelikulaZerrenda;
 	
 	public Aktorea(String pIzena) {
 		this.izena = pIzena;
+		this.pelikulaZerrenda = new PelikulaZerrenda();
 	}
 	
 	public String getIzena() {
 		return this.izena;
+	}
+	
+	public Iterator<Pelikula> getIteradorea(){
+		return this.pelikulaZerrenda.getIteradorea();
 	}
 	
 	public void sartuPelikula(Pelikula pPelikula) {
