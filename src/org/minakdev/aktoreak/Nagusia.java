@@ -169,7 +169,9 @@ public class Nagusia {
 	}
 	
 	public void aktoreBatenEzabaketa() {
-		
+		System.out.println("Sartu ezabatu nahi duzun aktorearen izena.");
+		String izena = nireNagusia.stringEskatu();
+		Aktoreak.getNireAktoreak().aktoreaEzabatu(izena);
 	}
 	
 	private float diruaEskatu(){

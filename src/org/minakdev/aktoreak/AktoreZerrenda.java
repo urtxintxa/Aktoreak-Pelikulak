@@ -21,10 +21,6 @@ public class AktoreZerrenda {
 		
 	}
 	
-	public void aktoreaEzbatu() {
-		
-	}
-	
 	public void aktoreakOrdenatu() {
 		
 	}
