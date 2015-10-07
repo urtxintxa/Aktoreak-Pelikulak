@@ -157,7 +157,7 @@ public class Nagusia {
 	public void diruaGehitu() {
 		System.out.println("Sartu pelikularen izena");
 		String pelIzen=this.stringEskatu();
-		Pelikula peli= Pelikulak.getNirePelikulak().pelikulaBilatu(pelIzen);
+		Pelikula peli= Pelikulak.getNirePelikulak().pelikulaBueltatu(pelIzen);
 		if(peli==null){
 			System.out.println("Pelikula hori ez dago. Ezin da dirurik gehitu.");
 		}
@@ -205,7 +205,7 @@ public class Nagusia {
 		String izena=this.stringEskatu();
 		Aktorea aktor= Aktoreak.getNireAktoreak().aktoreaBilatu(izena);
 		if(aktor==null){
-			Aktoreak.getNireAktoreak().aktoreaTxertatu(new Aktorea(izena));
+			Aktoreak.getNireAktoreak().aktoreaSartu(new Aktorea(izena));
 			Aktoreak.getNireAktoreak().aktoreakOrdenatu();
 		}
 		else{
