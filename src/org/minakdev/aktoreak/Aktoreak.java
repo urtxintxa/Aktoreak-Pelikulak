@@ -29,14 +29,11 @@ public class Aktoreak {
 		
 		for (int i = 1; i < atalak.length; i++) {
 			String pelikulaIzena = atalak[i];
-			Pelikula pelikula;
+			Pelikula pelikula = Pelikulak.getNirePelikulak().pelikulaBueltatu(pelikulaIzena);
 			
-			if(Pelikulak.getNirePelikulak().pelikulaBueltatu(pelikulaIzena) == null) {
+			if(pelikula == null) {
 				pelikula = new Pelikula(pelikulaIzena);
 				Pelikulak.getNirePelikulak().sartuPelikula(pelikula);
-			}
-			else {
-				pelikula = Pelikulak.getNirePelikulak().pelikulaBueltatu(pelikulaIzena);
 			}
 			
 			aktoreBerria.sartuPelikula(pelikula);
