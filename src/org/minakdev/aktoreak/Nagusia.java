@@ -150,8 +150,14 @@ public class Nagusia {
 		
 	}
 	
-	public void pelikulaBatekoAktoreakBueltatu() {
-		
+	public AktoreZerrenda pelikulaBatekoAktoreakBueltatu() {
+		System.out.println("Sartu pelikularen izena");
+		String izenburu=this.stringEskatu();
+		Pelikula pelikula= Pelikulak.getNirePelikulak().pelikulaBueltatu(izenburu);
+		if (pelikula==null){
+			System.out.println("pelikula ez da existitzen edo izena txarto sartu duzu");
+			return null;}
+		else{ return pelikula.aktoreakBueltatu();}
 	}
 	
 	public void diruaGehitu() {
@@ -216,7 +222,11 @@ public class Nagusia {
 	}
 	
 	public Aktorea aktoreaBilatu(){
+		System.out.println("Sartu pelikularen izena");
+		String aktoreIzen=this.stringEskatu();
+		return Aktoreak.getNireAktoreak().aktoreaBilatu(aktoreIzen);
 		
+
 	}
 
 }

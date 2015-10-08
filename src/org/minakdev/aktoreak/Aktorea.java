@@ -2,7 +2,7 @@ package org.minakdev.aktoreak;
 
 import java.util.Iterator;
 
-public class Aktorea {
+public class Aktorea implements Comparable<Aktorea>{
 	
 	private String izena;
 	private PelikulaZerrenda pelikulaZerrenda;
@@ -32,4 +32,9 @@ public class Aktorea {
 		this.pelikulaZerrenda.aktoreaEzabatu(this);
 		
 	}
-}
+
+	@Override
+	public int compareTo(Aktorea o) {
+		// TODO Auto-generated method stub
+		return o.izena.compareTo(anotherString);}
+	}

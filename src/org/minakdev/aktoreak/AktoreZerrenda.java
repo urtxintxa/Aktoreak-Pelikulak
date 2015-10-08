@@ -17,12 +17,29 @@ public class AktoreZerrenda {
 		aktoreZerrenda.add(pAktorea);
 	}
 	
-	public void aktoreaBilatu() {
-		
+	public Aktorea aktoreaBilatu(String izena) {
+		int ezker= 0;
+		int eskuin= this.aktoreZerrenda.size();
+		Aktorea aktore=null;
+		while (ezker<=eskuin){
+			int i = (ezker+eskuin)/2;
+			int lag = this.aktoreZerrenda.get(i).getIzena().compareTo(izena);
+			if (lag==0){
+				aktore= this.aktoreZerrenda.get(i);}
+			else{
+				if (lag>0){
+					ezker= i+1;}
+				else{
+				eskuin= i-1;
+				}
+			}
+		}
+	return aktore;
+
 	}
 	
 	public void aktoreakOrdenatu() {
-		
+		mergeSort(0, this.aktoreZerrenda.size()-1);
 	}
 
 	public void aktoreaEzabatu(Aktorea aktorea) {

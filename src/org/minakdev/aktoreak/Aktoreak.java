@@ -48,11 +48,12 @@ public class Aktoreak {
 	}
 	
 	public Aktorea aktoreaBilatu (String izena) {
+		return getNireAktoreak().aktoreaBilatu(izena);
 		
 	}
 	
 	public void aktoreakOrdenatu() {
-		
+		 this.aktoreZerrenda.aktoreakOrdenatu();
 	}
 	
 	public void aktoreaEzabatu(String izena){
