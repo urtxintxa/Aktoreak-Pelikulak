@@ -211,14 +211,7 @@ public class Nagusia {
 	
 	public void aktoreaTxertatu(){
 		String izena=this.stringEskatu();
-		Aktorea aktor= Aktoreak.getNireAktoreak().aktoreaBilatu(izena);
-		if(aktor==null){
-			Aktoreak.getNireAktoreak().aktoreaSartu(new Aktorea(izena));
-			Aktoreak.getNireAktoreak().aktoreakOrdenatu();
-		}
-		else{
-			System.out.println("Ezin da aktorea gehitu, izen bereko pertsona bat baitago.");
-		}
+		Aktoreak.getNireAktoreak().aktoreaTxertatu(izena);
 	}
 	
 	public Aktorea aktoreaBilatu(){
