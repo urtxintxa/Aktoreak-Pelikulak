@@ -24,7 +24,7 @@ public class Pelikula {
 	}
 	
 	public void sartuAktorea(Aktorea pAktorea) {
-		aktoreZerrenda.aktoreaTxertatu(pAktorea);
+		aktoreZerrenda.aktoreaSartu(pAktorea);
 	}
 
 	public AktoreZerrenda aktoreakBueltatu() {

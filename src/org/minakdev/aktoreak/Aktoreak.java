@@ -40,11 +40,11 @@ public class Aktoreak {
 			pelikula.sartuAktorea(aktoreBerria);
 		}
 		
-		aktoreZerrenda.aktoreaTxertatu(aktoreBerria);
+		aktoreZerrenda.aktoreaSartu(aktoreBerria);
 	}
 	
-	public void aktoreaSartu(String izena) {
-		aktoreZerrenda.aktoreaTxertatu(izena);
+	public void aktoreaSartu(Aktorea pAktorea) {
+		aktoreZerrenda.aktoreaSartu(pAktorea);
 	}
 	
 	public Aktorea aktoreaBilatu (String izena) {

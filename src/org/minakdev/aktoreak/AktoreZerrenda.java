@@ -13,7 +13,7 @@ public class AktoreZerrenda {
 		return aktoreZerrenda;
 	}
 	
-	public void aktoreaTxertatu(Aktorea pAktorea) {
+	public void aktoreaSartu(Aktorea pAktorea) {
 		aktoreZerrenda.add(pAktorea);
 	}
 	
