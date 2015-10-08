@@ -38,4 +38,5 @@ public class Pelikula {
 	public void diruaGehitu(float diru){
 		this.dirua=this.dirua+diru;
 	}
+	
 }
