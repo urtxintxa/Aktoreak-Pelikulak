@@ -28,4 +28,22 @@ public class AktoreZerrenda {
 	public void aktoreaEzabatu(Aktorea aktorea) {
 		this.aktoreZerrenda.remove(aktorea);		
 	}
+	
+	public void aktoreaTxertatu(String izena) {
+		int i =0;
+		while (i<aktoreZerrenda.size() && izena.compareTo(aktoreZerrenda.get(i).getIzena())>0){	
+			i ++;
+		}
+		
+		if(i==aktoreZerrenda.size()){
+			aktoreZerrenda.add(new Aktorea(izena));
+		}
+		else if(izena.compareTo(aktoreZerrenda.get(i).getIzena())==0){
+			System.out.println("Aktorea ezin da txertatu, izen bereko aktore bat baitago.");
+		}
+		else{
+			aktoreZerrenda.add(i, new Aktorea(izena));
+		}
+		
+	}
 }

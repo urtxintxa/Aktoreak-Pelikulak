@@ -66,4 +66,8 @@ public class Aktoreak {
 		}
 		
 	}
+	
+	public void aktoreaTxertatu(String izena){
+		aktoreZerrenda.aktoreaTxertatu(izena);
+	}
 }
