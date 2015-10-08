@@ -13,10 +13,6 @@ public class AktoreZerrenda {
 		return aktoreZerrenda;
 	}
 	
-	public void aktoreaTxertatu(Aktorea pAktorea) {
-		aktoreZerrenda.add(pAktorea);
-	}
-	
 	public void aktoreaBilatu() {
 		
 	}
