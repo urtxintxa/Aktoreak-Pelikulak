@@ -105,7 +105,7 @@ public class Nagusia {
 		
 	}
 	
-	private void fitxategiaKargatu(String pFitxategia) {
+	public void fitxategiaKargatu(String pFitxategia) {
 		
 		try {
 			
@@ -126,7 +126,7 @@ public class Nagusia {
 		Aktoreak.getNireAktoreak().aktoreakOrdenatu();
 	}
 	
-	private void aktoreenZerrendaGorde() throws FileNotFoundException, UnsupportedEncodingException {		
+	public void aktoreenZerrendaGorde() throws FileNotFoundException, UnsupportedEncodingException {		
 		PrintWriter idatzi = new PrintWriter("AktoreakOutput.txt", "UTF-8");
 		
 		Iterator<Aktorea> itr =  Aktoreak.getNireAktoreak().getAktoreZerrenda().iterator();
@@ -215,7 +215,7 @@ public class Nagusia {
 		}
 	}
 	
-	private Aktorea aktoreaBilatu(){
+	public Aktorea aktoreaBilatu(){
 		
 	}
 
