@@ -13,6 +13,7 @@ public class AktoreZerrenda {
 		return aktoreZerrenda;
 	}
 	
+<<<<<<< HEAD
 	public void aktoreaTxertatu(Aktorea pAktorea) {
 		aktoreZerrenda.add(pAktorea);
 	}
@@ -36,6 +37,10 @@ public class AktoreZerrenda {
 		}
 	return aktore;
 
+=======
+	public void aktoreaBilatu() {
+		
+>>>>>>> master
 	}
 	
 	public void aktoreakOrdenatu() {

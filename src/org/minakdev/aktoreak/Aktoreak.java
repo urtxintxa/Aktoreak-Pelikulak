@@ -30,7 +30,7 @@ public class Aktoreak {
 		for (int i = 1; i < atalak.length; i++) {
 			String pelikulaIzena = atalak[i];
 			Pelikula pelikula = Pelikulak.getNirePelikulak().pelikulaBueltatu(pelikulaIzena);
-			
+		
 			if(pelikula == null) {
 				pelikula = new Pelikula(pelikulaIzena);
 				Pelikulak.getNirePelikulak().sartuPelikula(pelikula);
@@ -43,8 +43,8 @@ public class Aktoreak {
 		aktoreZerrenda.aktoreaTxertatu(aktoreBerria);
 	}
 	
-	public void aktoreaSartu(Aktorea pAktorea) {
-		aktoreZerrenda.aktoreaTxertatu(pAktorea);
+	public void aktoreaSartu(String izena) {
+		aktoreZerrenda.aktoreaTxertatu(izena);
 	}
 	
 	public Aktorea aktoreaBilatu (String izena) {
