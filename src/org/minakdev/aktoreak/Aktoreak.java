@@ -48,7 +48,7 @@ public class Aktoreak {
 	}
 	
 	public Aktorea aktoreaBilatu (String izena) {
-		return getNireAktoreak().aktoreaBilatu(izena);
+		return aktoreZerrenda.aktoreaBilatu(izena);
 		
 	}
 	

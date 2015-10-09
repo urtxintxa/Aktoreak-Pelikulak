@@ -18,16 +18,16 @@ public class AktoreZerrenda {
 	}
 
 	public Aktorea aktoreaBilatu(String izena) {
-		int ezker= 0;
-		int eskuin= this.aktoreZerrenda.size();
-		Aktorea aktore=null;
-		while (ezker<=eskuin){
-			int i = (ezker+eskuin)/2;
+		int ezker = 0;
+		int eskuin = this.aktoreZerrenda.size() - 1;
+		Aktorea aktore = null;
+		while (ezker <= eskuin && aktore == null){
+			int i = (ezker + eskuin) / 2;
 			int lag = this.aktoreZerrenda.get(i).getIzena().compareTo(izena);
-			if (lag==0){
-				aktore= this.aktoreZerrenda.get(i);}
+			if (lag == 0){
+				aktore = this.aktoreZerrenda.get(i);}
 			else{
-				if (lag>0){
+				if (lag < 0){
 					ezker= i+1;
 				}
 				else{
