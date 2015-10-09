@@ -34,7 +34,7 @@ public class Aktorea implements Comparable<Aktorea>{
 	}
 
 	@Override
-	public int compareTo(Aktorea o) {
+	public int compareTo(Aktorea o){
 		// TODO Auto-generated method stub
-		return o.izena.compareTo(anotherString);}
+		return this.izena.compareTo(o.izena);}
 	}

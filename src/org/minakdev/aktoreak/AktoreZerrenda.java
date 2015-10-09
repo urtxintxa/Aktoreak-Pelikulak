@@ -16,7 +16,7 @@ public class AktoreZerrenda {
 	public void aktoreaSartu(Aktorea pAktorea) {
 		aktoreZerrenda.add(pAktorea);
 	}
-	
+
 	public Aktorea aktoreaBilatu(String izena) {
 		int ezker= 0;
 		int eskuin= this.aktoreZerrenda.size();
@@ -28,21 +28,74 @@ public class AktoreZerrenda {
 				aktore= this.aktoreZerrenda.get(i);}
 			else{
 				if (lag>0){
-					ezker= i+1;}
+					ezker= i+1;
+				}
 				else{
-				eskuin= i-1;
+					eskuin= i-1;
 				}
 			}
 		}
 		return aktore;
 	}
-
-	public void aktoreaBilatu() {
-		
-	}
 	
 	public void aktoreakOrdenatu() {
-		mergeSort(0, this.aktoreZerrenda.size()-1);
+		Aktorea aktoreArray[] = new Aktorea[this.aktoreZerrenda.size()];              
+		for(int i = 0; i < this.aktoreZerrenda.size(); i++){
+			aktoreArray[i] = this.aktoreZerrenda.get(i);
+		}
+		this.mergeSort(aktoreArray);
+		this.aktoreZerrenda.clear();
+		for(int i = 0; i < aktoreArray.length; i++){
+			this.aktoreZerrenda.add(aktoreArray[i]);
+		}
+	}
+	
+	public void mergeSort(Aktorea[] taula){
+		 this.mergeSort(taula, 0, taula.length-1);
+		}
+		
+	private void mergeSort (Aktorea[] taulaBat, int hasiera, int bukaera){
+		 if (hasiera < bukaera) { // taulan elementu bat baino gehiago badago
+			 this.mergeSort(taulaBat, hasiera, (hasiera+bukaera)/2);
+			 this.mergeSort(taulaBat, ((hasiera+bukaera)/2)+1, bukaera);
+			 this.bateratze(taulaBat, hasiera, (hasiera+bukaera)/2, bukaera);
+		 }
+	}
+	
+	private void bateratze (Aktorea[] taula, int i, int erdikoa, int f){
+		Aktorea[] bateratua = new Aktorea[f-i+1];
+		int ezker = i;
+		int eskuin = erdikoa+1;
+		int k = 0; //bateratua taula betetzeko indizea
+		while ( ezker<=erdikoa && eskuin<=f ){
+			if ( taula[ezker].compareTo(taula[eskuin])<= 0 ){
+				bateratua[k] = taula[ezker];
+				k++;
+				ezker++;
+			}
+			else {
+				bateratua[k] = taula[eskuin];
+				k++;
+				eskuin++;
+			}
+		}
+		if ( ezker > erdikoa ) {
+			while ( eskuin<=f ){
+				bateratua[k] = taula[eskuin];
+				k++;
+				eskuin++;
+			}
+		}	 
+		else {
+			while ( ezker<=erdikoa ){
+				bateratua[k] = taula[ezker];
+				k++;
+				ezker++;
+			}
+		}
+		for (int j=i; j<=f; j++){
+			taula[j] = bateratua[j-i];
+		}
 	}
 
 	public void aktoreaEzabatu(Aktorea aktorea) {

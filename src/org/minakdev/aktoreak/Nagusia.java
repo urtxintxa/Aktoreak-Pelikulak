@@ -34,8 +34,6 @@ public class Nagusia {
 		
 		nireNagusia.fitxategiaKargatu(fitxategia);
 		
-		
-		
 		System.out.println("AKOTEAK ETA PELIKULAK KUDEATZEKO APLIKAZIOA");
 		System.out.println("Aplikazioa honek aukera hauek ditu:");
 		do{
