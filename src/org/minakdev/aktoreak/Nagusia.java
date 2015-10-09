@@ -16,7 +16,7 @@ public class Nagusia {
 	private static Nagusia nireNagusia;
 	
 	//private static String fitxategia = "aktore-zerrenda.txt";
-	private static String fitxategia = "aktoreak_txiki.txt";
+	private static String fitxategia = "aktore_zerrenda_txiki.txt";
 	
 	private static Scanner sc = new Scanner(System.in);
 
@@ -129,7 +129,7 @@ public class Nagusia {
 	}
 	
 	public void aktoreenZerrendaGorde() throws FileNotFoundException, UnsupportedEncodingException {		
-		PrintWriter idatzi = new PrintWriter("AktoreakOutput.txt", "UTF-8");
+		PrintWriter idatzi = new PrintWriter("ZerrendaBerria.txt", "UTF-8");
 		
 		Iterator<Aktorea> itr =  Aktoreak.getNireAktoreak().getAktoreZerrenda().iterator();
 		
@@ -146,6 +146,8 @@ public class Nagusia {
 		}
 		
 		idatzi.close();
+		
+		System.out.println("Zerrenda \"ZerrendaBerria.txt\" fitxategia gorde da");
 	}
 	
 	public void aktoreBatenPelikulakBueltatu() {
@@ -154,12 +156,15 @@ public class Nagusia {
 	
 	public AktoreZerrenda pelikulaBatekoAktoreakBueltatu() {
 		System.out.println("Sartu pelikularen izena");
-		String izenburu=this.stringEskatu();
-		Pelikula pelikula= Pelikulak.getNirePelikulak().pelikulaBueltatu(izenburu);
-		if (pelikula==null){
+		String izenburu = this.stringEskatu();
+		Pelikula pelikula = Pelikulak.getNirePelikulak().pelikulaBueltatu(izenburu);
+		if (pelikula == null){
 			System.out.println("pelikula ez da existitzen edo izena txarto sartu duzu");
 			return null;}
-		else{ return pelikula.aktoreakBueltatu();}
+		else { 
+			return pelikula.aktoreakBueltatu();
+			
+		}
 	}
 	
 	public void diruaGehitu() {
@@ -203,18 +208,20 @@ public class Nagusia {
 	}
 	
 	private String stringEskatu(){
+		sc.nextLine();
 		String izena = sc.nextLine();
 		return izena;
 		
 	}
 	
 	public void aktoreaTxertatu(){
-		String izena=this.stringEskatu();
+		System.out.println("Sartu aktorearen izena:");
+		String izena = this.stringEskatu();
 		Aktoreak.getNireAktoreak().aktoreaTxertatu(izena);
+		System.out.println("Aktorea arazorik gabe txertatu da.");
 	}
 	
 	public Aktorea aktoreaBilatu(){
-		sc.nextLine();
 		System.out.println("Sartu aktorearen izena:");
 		String aktoreIzen = this.stringEskatu();
 		return Aktoreak.getNireAktoreak().aktoreaBilatu(aktoreIzen);
