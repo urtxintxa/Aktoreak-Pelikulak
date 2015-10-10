@@ -24,7 +24,7 @@ public class Aktoreak {
 	}
 	
 	public void sortuAktorea(String pAktoreaPelikulak) {
-		HashMap<String, Pelikula> hashTable = new HashMap<>();
+		HashMap<String, Pelikula> hashTable = new HashMap<String, Pelikula>();
 		
 		String [] atalak = pAktoreaPelikulak.split("\\s*###\\s*");
 		

@@ -153,17 +153,27 @@ public class Nagusia {
 		System.out.println("Zerrenda \"ZerrendaBerria.txt\" fitxategia gorde da");
 	}
 	
-	public void aktoreBatenPelikulakBueltatu() {
-		
+	public PelikulaZerrenda aktoreBatenPelikulakBueltatu() {
+		System.out.println("Sartu aktorearen izena:");
+		String izena = this.stringEskatu();
+		Aktorea aktorea = Aktoreak.getNireAktoreak().aktoreaBilatu(izena);
+		if(aktorea == null) {
+			System.out.println("Aktorea ez da existitzen edo izena txarto sartu duzu.");
+			return null;
+		}
+		else {
+			return aktorea.pelikulakBueltatu();
+		}
 	}
 	
 	public AktoreZerrenda pelikulaBatekoAktoreakBueltatu() {
-		System.out.println("Sartu pelikularen izena");
+		System.out.println("Sartu pelikularen izena:");
 		String izenburu = this.stringEskatu();
 		Pelikula pelikula = Pelikulak.getNirePelikulak().pelikulaBueltatu(izenburu);
 		if (pelikula == null){
-			System.out.println("pelikula ez da existitzen edo izena txarto sartu duzu");
-			return null;}
+			System.out.println("Pelikula ez da existitzen edo izena txarto sartu duzu");
+			return null;
+		}
 		else { 
 			return pelikula.aktoreakBueltatu();
 			
