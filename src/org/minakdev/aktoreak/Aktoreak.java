@@ -1,6 +1,7 @@
 package org.minakdev.aktoreak;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Aktoreak {
 
@@ -23,17 +24,20 @@ public class Aktoreak {
 	}
 	
 	public void sortuAktorea(String pAktoreaPelikulak) {
+		HashMap<String, Pelikula> hashTable = new HashMap<>();
+		
 		String [] atalak = pAktoreaPelikulak.split("\\s*###\\s*");
 		
 		Aktorea aktoreBerria = new Aktorea(atalak[0]);
 		
 		for (int i = 1; i < atalak.length; i++) {
 			String pelikulaIzena = atalak[i];
-			Pelikula pelikula = Pelikulak.getNirePelikulak().pelikulaBueltatu(pelikulaIzena);
+			Pelikula pelikula = hashTable.get(pelikulaIzena);
 		
 			if(pelikula == null) {
 				pelikula = new Pelikula(pelikulaIzena);
 				Pelikulak.getNirePelikulak().sartuPelikula(pelikula);
+				hashTable.put(pelikulaIzena, pelikula);
 			}
 			
 			aktoreBerria.sartuPelikula(pelikula);
