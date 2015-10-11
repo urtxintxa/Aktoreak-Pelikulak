@@ -75,4 +75,14 @@ public class Aktoreak {
 	public void aktoreaTxertatu(String izena){
 		aktoreZerrenda.aktoreaTxertatu(izena);
 	}
+	
+	//Junit-ak probatzeko
+	
+	public void erreseteatu(){
+		this.aktoreZerrenda.erreseteatu();
+	}
+	
+	public int luzera(){
+		return this.aktoreZerrenda.luzera();
+	}
 }

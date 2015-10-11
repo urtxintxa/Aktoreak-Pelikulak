@@ -110,13 +110,26 @@ public class AktoreZerrenda {
 		
 		if(i==aktoreZerrenda.size()){
 			aktoreZerrenda.add(new Aktorea(izena));
+
+			System.out.println("Aktorea arazorik gabe txertatu da.");
 		}
 		else if(izena.compareTo(aktoreZerrenda.get(i).getIzena())==0){
 			System.out.println("Aktorea ezin da txertatu, izen bereko aktore bat baitago.");
 		}
 		else{
 			aktoreZerrenda.add(i, new Aktorea(izena));
+			System.out.println("Aktorea arazorik gabe txertatu da.");
 		}
 		
+	}
+	
+	
+	//Junit-ak probatzeko
+	public void erreseteatu() {
+		this.aktoreZerrenda.clear();
+		
+	}
+	public int luzera() {
+		return this.aktoreZerrenda.size();
 	}
 }

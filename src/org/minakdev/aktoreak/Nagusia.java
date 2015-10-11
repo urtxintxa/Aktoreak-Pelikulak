@@ -16,7 +16,7 @@ public class Nagusia {
 	private static Nagusia nireNagusia;
 	
 	//private static String fitxategia = "aktore-zerrenda.txt";
-	private static String fitxategia = "aktore-zerrenda_handia.txt";
+	private static String fitxategia = "aktore-zerrenda_txiki.txt";
 	
 	private static Scanner sc = new Scanner(System.in);
 
@@ -231,7 +231,6 @@ public class Nagusia {
 		System.out.println("Sartu aktorearen izena:");
 		String izena = this.stringEskatu();
 		Aktoreak.getNireAktoreak().aktoreaTxertatu(izena);
-		System.out.println("Aktorea arazorik gabe txertatu da.");
 	}
 	
 	public Aktorea aktoreaBilatu(){

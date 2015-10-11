@@ -42,4 +42,14 @@ public class PelikulaZerrenda {
 		}
 		return peli;
 	}
+
+	
+	//Junit-ak probatzeko
+	public void erreseteatu() {
+		this.pelikulaZerrenda.clear();	
+	}
+	
+	public int luzera(){
+		return this.pelikulaZerrenda.size();
+	}
 }

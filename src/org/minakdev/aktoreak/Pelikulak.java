@@ -23,4 +23,15 @@ public class Pelikulak {
 	public Pelikula pelikulaBueltatu(String izena){
 		return this.pelikulaZerrenda.pelikulaBueltatu(izena);
 	}
+	
+	//Junit-ak probatzeko
+	
+	public void erreseteatu(){
+		this.pelikulaZerrenda.erreseteatu();
+	}
+	
+	public int luzera(){
+		return this.pelikulaZerrenda.luzera();
+	}
+	
 }
