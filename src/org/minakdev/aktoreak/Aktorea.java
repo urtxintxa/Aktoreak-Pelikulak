@@ -30,11 +30,11 @@ public class Aktorea implements Comparable<Aktorea>{
 
 	public void pelikuletatikEzabatu() {
 		this.pelikulaZerrenda.aktoreaEzabatu(this);
-		
 	}
 
 	@Override
 	public int compareTo(Aktorea o){
 		// TODO Auto-generated method stub
-		return this.izena.compareTo(o.izena);}
+		return this.izena.compareTo(o.izena);
 	}
+}
