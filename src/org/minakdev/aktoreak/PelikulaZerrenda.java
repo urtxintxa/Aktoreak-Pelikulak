@@ -18,10 +18,6 @@ public class PelikulaZerrenda {
 		}
 	}
 	
-	public void pelikulaBilatu() {
-		
-	}
-	
 	public void sartuPelikula(Pelikula pPelikula) {
 		pelikulaZerrenda.add(pPelikula);
 	}
@@ -42,14 +38,9 @@ public class PelikulaZerrenda {
 		}
 		return peli;
 	}
-
 	
 	//Junit-ak probatzeko
-	public void erreseteatu() {
-		this.pelikulaZerrenda.clear();	
-	}
-	
-	public int luzera(){
-		return this.pelikulaZerrenda.size();
+	public ArrayList<Pelikula> getPelikulaZerrenda() {
+		return this.pelikulaZerrenda;
 	}
 }

@@ -21,7 +21,6 @@ public class NagusiaTest {
 	@After
 	public void tearDown() throws Exception {
 		Aktoreak.getNireAktoreak().erreseteatu();
-		Pelikulak.getNirePelikulak().erreseteatu();
 	}
 	
 	
