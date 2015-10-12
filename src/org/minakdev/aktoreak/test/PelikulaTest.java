@@ -37,14 +37,6 @@ public class PelikulaTest {
 		assertSame(pelikula.getIzena(), "Pelikula1");
 	}
 	
-	@Test
-	public void getDirua() {
-		assertEquals(pelikula.getDirua(), 0f, 0);
-		
-		pelikula.setDirua(10f);
-		System.out.println(pelikula.getDirua());
-		assertEquals(pelikula.getDirua(), 10f, 0);
-	}
 	
 	@Test
 	public void sartuAktorea() {

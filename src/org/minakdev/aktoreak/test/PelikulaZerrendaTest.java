@@ -15,6 +15,7 @@ public class PelikulaZerrendaTest {
 	
 	private Pelikula pelikula1;
 	private Pelikula pelikula2;
+	private Pelikula pelikula3;
 	
 	private Aktorea aktore1;
 	private Aktorea aktore2;
@@ -25,6 +26,7 @@ public class PelikulaZerrendaTest {
 		
 		pelikula1 = new Pelikula("Pelikula1");
 		pelikula2 = new Pelikula("Pelikula2");
+		pelikula3 = new Pelikula("Pelikula3");
 		
 		aktore1 = new Aktorea("Aktorea1");
 		aktore2 = new Aktorea("Aktorea2");
@@ -36,6 +38,7 @@ public class PelikulaZerrendaTest {
 		
 		pelikula1 = null;
 		pelikula2 = null;
+		pelikula3 = null;
 		
 		aktore1 = null;
 		aktore2 = null;
@@ -69,6 +72,13 @@ public class PelikulaZerrendaTest {
 		pelikulaZerrenda.sartuPelikula(pelikula1);
 		assertSame(pelikulaZerrenda.pelikulaBueltatu("Pelikula2"), null);
 		assertSame(pelikulaZerrenda.pelikulaBueltatu("Pelikula1"), pelikula1);
+		
+		pelikulaZerrenda.sartuPelikula(pelikula3);
+		pelikulaZerrenda.sartuPelikula(pelikula2);
+		assertSame(pelikulaZerrenda.pelikulaBueltatu("Pelikula4"), null);
+		assertSame(pelikulaZerrenda.pelikulaBueltatu("Pelikula1"), pelikula1);
+		assertSame(pelikulaZerrenda.pelikulaBueltatu("Pelikula2"), pelikula2);
+		assertSame(pelikulaZerrenda.pelikulaBueltatu("Pelikula3"), pelikula3);
 	}
 
 }
