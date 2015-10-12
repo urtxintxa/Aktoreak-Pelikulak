@@ -16,7 +16,7 @@ public class Nagusia {
 	private static Nagusia nireNagusia;
 	
 	//private static String fitxategia = "aktore-zerrenda.txt";
-	private static String fitxategia = "aktore-zerrenda_txiki.txt";
+	private static String fitxategia = "aktore-zerrenda_handia.txt";
 	
 	private static Scanner sc = new Scanner(System.in);
 
@@ -112,16 +112,8 @@ public class Nagusia {
 		try {
 			
 			Scanner sc = new Scanner(new FileReader(pFitxategia));
-			
-			String aktoreaPelikulak;
-			
-			int i = 0;
-			
-			while(sc.hasNext()) {
-				aktoreaPelikulak = sc.nextLine();
-				Aktoreak.getNireAktoreak().sortuAktorea(aktoreaPelikulak);
-				System.out.println(i++);
-			}
+						
+			Aktoreak.getNireAktoreak().sortuAktorea(sc);
 			
 			sc.close();
 			
